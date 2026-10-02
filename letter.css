@@ -1,0 +1,108 @@
+* {
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+body {
+	font-family:'Georgia',serif;
+	background: linear-gradient(to bottom, #fff5f7, #ffe8ee);
+	color: #4a3b3b;
+	overflow: hidden;
+}
+.hero {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+.hero h1 {
+	font-size: 2.8rem;
+	font-weight: 400;
+	color:#d46a8f;
+	letter-spacing: 1px;
+}
+.hero.subtile {
+	margin-top: 1 rem;
+	font-size: 1rem;
+	color: #a87b8f;
+	animation: bounce 2s infinite;
+}
+@keyframes bounce {
+	0%, 100% { transform: translateY(0);}
+	50%{transform:translateY (8px);}
+}
+.letter {
+	max-width:600px;
+	margin: 0 auto;
+	padding: 4rem 2rem;
+}
+.line {
+	font-size: 1.3rem;
+	line-height: 1.8;
+	margin-bottom:2rem;
+	opacity: 0;
+	transform:translateY(20px);
+	transition:opacity 1s ease, transform 1s ease;
+}
+.line.visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+.envelope-screen {
+	position: fixed;
+	inset: 0;
+	background: linear-gradient(to bottom, #ffe8ee, #fddce6);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	z-index: 999;
+	cursor: pointer;
+	transition: opacity 0.8s ease;
+}
+.envelope {
+	position: relative;
+	width: 260px;
+	height: 170px;
+}
+.envelope .body {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: #f7c9d6;
+	border: 2px solid #d46a8f;
+	border-radius: 6px;
+}
+.envelope .flap {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width:0;
+	height: 0;
+	border-left:130px solid transparent;
+	border-right: 130px solid transparent;
+	border-top: 100px solid #f2a5bc;
+	transform-origin: top;
+	transition: transform 0.8s ease;
+	z-index: 2;
+}
+.envelope .heart {
+	position: absolute;
+	top: 60%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 1.8rem;
+	color: #d46a8f;
+}
+.envelope.open .flap {
+	transform: rotateX(180deg);
+}
+.tap-hint {
+	margin-top: 1.5rem;
+	color: #a8607f;
+	font-family:'George', serif;
+	animation: bounce 2s infinite;
+}
